@@ -1,7 +1,7 @@
 // console.log('Hello from Kiana and Gita')
 
 const mapboxgl = require("mapbox-gl");
-const markerFunc = require("./marker");
+const marker = require("./marker");
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoia2lhbmF3b250Z2giLCJhIjoiY2szNHBjejQ3MTBicTNsbW1wcXU4ODVxYiJ9.p-fPIeIjQANUN5W6UPRBCg';
 
@@ -20,6 +20,6 @@ const map = new mapboxgl.Map({
 // fullstackMarker.style.backgroundImage = "url(http://i.imgur.com/WbMOfMl.png)";
 // new mapboxgl.Marker(fullstackMarker).setLngLat([-74.009151, 40.705086]).addTo(map)
 
-const loadMarker = markerFunc('activity', [-74.009151, 40.705086]);
+const loadMarker = marker.markerFunc('hotel', {lon: -74.009151, lat: 40.705086});
 loadMarker.addTo(map);
 

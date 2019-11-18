@@ -1,8 +1,10 @@
 const mapboxgl = require("mapbox-gl");
 
-const MarkerFunc = function(type, coordinates){
-let newMarker = document.createElement("div")
-// type = type.toLowerCase()
+const Marker = {
+
+  markerFunc: function(type, coordinates){
+    let newMarker = document.createElement("div")
+  type = type.toLowerCase()
 if(type === 'hotel') {
   newMarker.style.backgroundImage = "url(http://i.imgur.com/D9574Cu.png)";
 }
@@ -16,10 +18,10 @@ else {
 newMarker.style.width = "32px";
 newMarker.style.height = "39px";
 
-let marker = new mapboxgl.Marker(newMarker).setLngLat(coordinates)
-
+let marker = new mapboxgl.Marker(newMarker).setLngLat(coordinates);
 return marker;
+  }
+
 }
 
-
-module.exports = MarkerFunc()
+module.exports = Marker
